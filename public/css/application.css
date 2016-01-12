@@ -7,3 +7,20 @@
 th {
   text-align: left;
 }
+
+.login {
+  margin: 20px auto;
+  width: 700 px;
+  border: 1px solid gray;
+}
+
+.login input{
+  margin: 5px;
+  width: 200px;
+}
+
+#login_link {
+  margin:20px auto;
+  font-size: 35px;
+  text-decoration: none;
+}
