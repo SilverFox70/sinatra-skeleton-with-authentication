@@ -10,8 +10,9 @@ end
 post '/users/new' do
   @user = User.new(f_name: params[:f_name],
                    l_name: params[:l_name],
-                   email:  params[:email])
-  @user.password = params[:pwd_plaintext]
+                   email:  params[:email],
+                   password: params[:password_plaintext])
+  #@user.password = params[:password_plaintext]
   if @user.save
     session[:user_id] = @user.id
     redirect '/'

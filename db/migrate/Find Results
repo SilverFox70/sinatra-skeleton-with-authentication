@@ -1,0 +1,15 @@
+Searching 29 files for "pwd_hash"
+
+/Users/apprentice/Desktop/Bill/dummy-users-challenge/app/models/user.rb:
+   11
+   12    def password
+   13:     @password ||= BCrypt::Password.new(password_hash)
+   14    end
+   15
+   16    def password=(new_password_plaintext)
+   17      @password = BCrypt::Password.create(new_password_plaintext)
+   18:     self.password_hash = @password.to_s
+   19    end
+   20
+
+2 matches in 1 file
