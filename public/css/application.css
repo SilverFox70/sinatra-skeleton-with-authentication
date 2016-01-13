@@ -19,6 +19,11 @@ th {
   width: 200px;
 }
 
+.login input{
+  margin: 5px;
+  width: 200px;
+}
+
 .go_link {
   margin:20px auto;
   font-size: 35px;
