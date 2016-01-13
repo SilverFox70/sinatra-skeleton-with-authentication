@@ -8,18 +8,18 @@ th {
   text-align: left;
 }
 
-.login {
+.registration {
   margin: 20px auto;
   width: 700 px;
   border: 1px solid gray;
 }
 
-.login input{
+.registration input{
   margin: 5px;
   width: 200px;
 }
 
-#login_link {
+.go_link {
   margin:20px auto;
   font-size: 35px;
   text-decoration: none;

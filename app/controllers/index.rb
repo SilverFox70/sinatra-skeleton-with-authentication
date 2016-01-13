@@ -8,5 +8,5 @@ get '/login' do
 end
 
 post '/login' do
-  erb :login
+  erb :welcome
 end
