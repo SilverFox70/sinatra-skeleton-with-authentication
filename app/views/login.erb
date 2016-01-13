@@ -1,4 +1,14 @@
 <div class="container">
+<!-- Perhaps swtich to using fieldset and legend tags -->
+  <% if @error %>
+    <div class="errors-container">
+      <span>Login Failed</span>
+      <ul class="errors">
+        <li class="error"><%= @error %></li>
+      </ul>
+    </div>
+  <% end %>
+
   <h1>Login</h1>
   <p>Please login below</p>
 
