@@ -1,4 +1,16 @@
 <div class="container">
+
+  <% if @error %>
+    <div class="errors-container">
+      <span>Login Failed</span>
+      <ul class="errors">
+        <% @errors.each do |error| %>
+          <li class="error"><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <h1>Register for our site</h1>
   <p>Fill out the form below</p>
 

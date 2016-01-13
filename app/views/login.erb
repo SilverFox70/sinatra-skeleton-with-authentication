@@ -4,7 +4,9 @@
     <div class="errors-container">
       <span>Login Failed</span>
       <ul class="errors">
-        <li class="error"><%= @error %></li>
+        <% @errors.each do |error| %>
+          <li class="error"><%= error %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
