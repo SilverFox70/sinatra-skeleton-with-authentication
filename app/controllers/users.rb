@@ -27,6 +27,8 @@ get '/users/:user_id' do
   @viewing_user = User.find(params[:user_id])
 
   if @logged_in_as && @logged_in_as.id == @viewing_user.id
+    # Stub for creating a profile page. Add routing to bring a user to their unique profile
+
     erb :user_id
   else
     erb :not_authorized
