@@ -9,7 +9,7 @@ end
 
 post '/sessions/new' do
   @user = User.find_by_email(params[:email])
-  if @user && @user.authenticate(params[:email], params[:pwd_plaintext])
+  if @user && @user.authenticate(params[:email], params[:password_plaintext])
     session[:user_id] = @user.id
     redirect "/users/#{@user.id}"
   else

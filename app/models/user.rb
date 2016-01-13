@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     self.password_hash = @password.to_s
   end
 
-  def self.authenticate(email, password)
+  def authenticate(email, password_plaintext)
     # if email and password correspond to a valid user,
     # return that user, otherwise return
     # currently only checks for valid password
