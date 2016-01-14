@@ -24,17 +24,12 @@
 
 /*Registration and login page*/
 
-#reg_form input{
+#registration_form input{
   margin: 5px;
   padding: 0px;
 }
 
 #login_form input{
-  margin: 5px;
-  padding: 0px;
-}
-
-#rest_form input{
   margin: 5px;
   padding: 0px;
 }

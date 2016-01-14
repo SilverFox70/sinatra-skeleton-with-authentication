@@ -16,15 +16,18 @@
 
   <div class="registration">
     <form id="registration_form" method="POST" action="/users/new">
-      <input id="first_name" type="text" name="first_name" value="<%= @user.try(:first_name) %>" placeholder="First Name">
-      <br/>
-      <input id="last_name" type="text" name="last_name" value="<%= @user.try(:last_name) %>" placeholder="Last Name">
-      <br/>
-      <input id="email" type="text" name="email" value="<%= @user.try(:email) %>" placeholder="email">
-      <br/>
-      <input id="pwd" type="password" name="password_plaintext" placeholder="password">
-       <br/>
-      <input id="pwd" type="submit" name="submit" value="register">
+      <fieldset>
+        <legend>Registration</legend>
+          <input id="first_name" type="text" name="first_name" value="<%= @user.try(:first_name) %>" placeholder="First Name">
+          <br/>
+          <input id="last_name" type="text" name="last_name" value="<%= @user.try(:last_name) %>" placeholder="Last Name">
+          <br/>
+          <input id="email" type="text" name="email" value="<%= @user.try(:email) %>" placeholder="email">
+          <br/>
+          <input id="pwd" type="password" name="password_plaintext" placeholder="password">
+           <br/>
+          <input id="pwd" type="submit" name="submit" value="Register">
+      </fieldset>
     </form>
   </div>
 
