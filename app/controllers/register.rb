@@ -4,6 +4,7 @@ get '/register' do
   erb :register
 end
 
-post '/register' do
-  erb :login
-end
+# Use the route below if you wish to have users login after registering
+# post '/register' do
+#   erb :login
+# end

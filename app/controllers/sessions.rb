@@ -7,11 +7,13 @@ get '/sessions/new' do
   end
 end
 
+# Route the user to the homepage on successful login,
+# otherwise return them to the login page
 post '/sessions/new' do
   @user = User.find_by_email(params[:email])
   if @user && @user.authenticate(params[:email], params[:password_plaintext])
     session[:user_id] = @user.id
-    redirect "/users/#{@user.id}"
+    redirect '/'
   else
     session.delete(:user_id)
     @error = "Please check your email address and password and try again."

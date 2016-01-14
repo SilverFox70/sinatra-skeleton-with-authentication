@@ -14,7 +14,7 @@ namespace :generate do
       raise "Must specificy model name, e.g., rake generate:model NAME=User"
     end
 
-    model_name     = ENV['NAME'].camelize
+    modelast_name     = ENV['NAME'].camelize
     model_filename = ENV['NAME'].underscore + '.rb'
     model_path = APP_ROOT.join('app', 'models', model_filename)
 
@@ -25,7 +25,7 @@ namespace :generate do
     puts "Creating #{model_path}"
     File.open(model_path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
-        class #{model_name} < ActiveRecord::Base
+        class #{modelast_name} < ActiveRecord::Base
           # Remember to create a migration!
         end
       EOF

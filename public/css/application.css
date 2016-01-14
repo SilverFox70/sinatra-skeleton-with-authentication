@@ -1,36 +1,71 @@
 .container {
   margin: 20px auto;
   width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
-th {
-  text-align: left;
+  padding: 5px 20px 20px 20px;
+  border: 1px dotted gray;
 }
 
-.registration {
-  margin: 20px auto;
-  width: 700 px;
-  border: 1px solid gray;
-}
 
-.registration input{
+.nav_button {
   margin: 5px;
-  width: 200px;
-}
-
-.login input{
-  margin: 5px;
-  width: 200px;
-}
-
-.go_link {
-  margin:20px auto;
-  font-size: 35px;
-  /*text-decoration: none;*/
-}
-
-.logout {
-  margin:10px auto;
+  padding: 5px;
   font-size: 20px;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: Gray;
+  -webkit-transition: background-color .5s;
+  transition: background-color 0.5s;
+}
+
+.nav_button:hover {
+  background-color: DarkSlateGray;
+}
+
+/*Registration and login page*/
+
+#reg_form input{
+  margin: 5px;
+  padding: 0px;
+}
+
+#login_form input{
+  margin: 5px;
+  padding: 0px;
+}
+
+#rest_form input{
+  margin: 5px;
+  padding: 0px;
+}
+
+input[type=submit]{
+  width: 90px;
+  margin: 5px;
+  padding: 10px 15px 10px 15px;
+  font-size: 20px;
+  color: white;
+  border: 0 none;
+  border-radius: 4px;
+  background-color: Gray;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+input[type=submit]:hover{
+  background-color: DarkSlateGray;
+}
+
+legend {
+  font-size: 20px;
+  padding: 0px 5px 0px 5px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+#creator {
+  font-size: 0.5em;
 }
