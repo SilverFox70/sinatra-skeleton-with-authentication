@@ -28,4 +28,8 @@ class User < ActiveRecord::Base
     return email_match && password_match
   end
 
+  def is_admin?
+    return self.role == 1
+  end
+
 end
