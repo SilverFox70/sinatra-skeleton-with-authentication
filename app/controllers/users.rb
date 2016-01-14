@@ -8,8 +8,8 @@ get '/users/new' do
 end
 
 post '/users/new' do
-  @user = User.new(f_name: params[:f_name],
-                   l_name: params[:l_name],
+  @user = User.new(first_name: params[:first_name],
+                   last_name: params[:last_name],
                    email:  params[:email],
                    password: params[:password_plaintext])
   #@user.password = params[:password_plaintext]

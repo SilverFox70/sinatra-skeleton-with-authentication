@@ -1,30 +1,19 @@
+
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-
+  <h1>Sinatra Skeleton with Login</h1>
+  <p>Use this framework to build your app.</p>
+  <% if session[:user_id] %>
+    <h2>Welcome <%= @user.email %>!</h2>
+    <a id="logout_button" class="nav_button" href="/logout">Logout</a>
+    <a id="add_button" class="nav_button" href="/restaurants/new">Add a restuarant</a>
+  <% else %>
+    <a id="reg_button" class="nav_button" href="/register">Register</a>
+    <a id="login_button" class="nav_button" href="/login">Login</a>
+  <% end %>
 </div>
 
+<!-- For debugging/tracking purposes -->
 <div class="container">
-  <a href="/register" class="go_link">Register Here!</a><br/>
-  <a href="/login" class="go_link">Login Here!</a><br/>
-  <a href="/logout" class="logout">Logout</a>
+  <h2>Debugging area</h2>
+  <p>Session id : <%= session[:user_id] %></p>
 </div>

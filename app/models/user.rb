@@ -11,12 +11,10 @@ class User < ActiveRecord::Base
   #validates :pwd_confirmation, presence: true
 
   def password
-    puts "in password ***************************************"
     @password ||= BCrypt::Password.new(password_hash)
   end
 
   def password=(new_password_plaintext)
-    puts "in funky password +++++++++++++++++++++++++++++++++"
     @password = BCrypt::Password.create(new_password_plaintext)
     self.password_hash = @password.to_s
   end
@@ -25,7 +23,9 @@ class User < ActiveRecord::Base
     # if email and password correspond to a valid user,
     # return that user, otherwise return
     # currently only checks for valid password
-    return self.password == password_plaintext
+    email_match = true if self.email == email
+    password_match = true if self.password == password_plaintext
+    return email_match && password_match
   end
 
 end

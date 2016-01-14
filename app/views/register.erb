@@ -16,9 +16,9 @@
 
   <div class="registration">
     <form id="registration_form" method="POST" action="/users/new">
-      <input id="f_name" type="text" name="f_name" value="<%= @user.try(:f_name) %>" placeholder="First Name">
+      <input id="first_name" type="text" name="first_name" value="<%= @user.try(:first_name) %>" placeholder="First Name">
       <br/>
-      <input id="l_name" type="text" name="l_name" value="<%= @user.try(:l_name) %>" placeholder="Last Name">
+      <input id="last_name" type="text" name="last_name" value="<%= @user.try(:last_name) %>" placeholder="Last Name">
       <br/>
       <input id="email" type="text" name="email" value="<%= @user.try(:email) %>" placeholder="email">
       <br/>
