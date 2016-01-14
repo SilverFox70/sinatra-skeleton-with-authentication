@@ -16,6 +16,11 @@
   padding: 10px 10px 10px 20px;
 }
 
+.title_block {
+  width: 70%;
+  float: left;
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
