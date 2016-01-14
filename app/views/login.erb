@@ -1,25 +1,22 @@
 <div class="container">
-<!-- Perhaps swtich to using fieldset and legend tags -->
-  <% if @error %>
-    <div class="errors-container">
-      <span>Login Failed</span>
+
+  <!-- Display errors if there are any -->
+  <% if @errors %>
+    <div class="error_container">
+      <span>Oops! Login Failed</span>
       <ul class="errors">
-        <li class="error"><%= @error %></li>
+        <li class="error"><%= @errors %></li>
       </ul>
     </div>
   <% end %>
 
-  <h1>Login</h1>
-  <p>Please login below</p>
-
-  <div class="login">
-    <form id="login_form" method="POST" action="/sessions/new">
-      <input id="email" type="text" name="email" placeholder="email">
-      <br/>
-      <input id="pwd" type="password" name="password_plaintext" placeholder="password">
-       <br/>
-      <input id="pwd" type="submit" name="submit" value="Login">
-    </form>
-  </div>
-
+  <!-- Show the login form   -->
+  <form id="login_form" method="POST" action="/sessions/new">
+    <fieldset>
+      <legend>Login</legend>
+      Email: <input type="text" id="email" name="email" value="<%= @user.try(:email) %>" placeholder="Your email..."><br/>
+      Password: <input type="password" id="pwd" name="password_plaintext"><br/>
+      <input type="submit" value="Login">
+    </fieldset>
+  </form>
 </div>
