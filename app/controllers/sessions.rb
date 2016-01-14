@@ -12,7 +12,7 @@ end
 post '/sessions/new' do
   @user = User.find_by_email(params[:email])
   if @user && @user.authenticate(params[:email], params[:password_plaintext])
-    session[:user_id] = @user.id
+    session[:user_id] = @user.slug
     redirect '/'
   else
     session.delete(:user_id)

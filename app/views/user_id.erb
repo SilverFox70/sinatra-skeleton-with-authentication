@@ -4,6 +4,16 @@
     Name: <%= @logged_in_as.first_name %> <%= @logged_in_as.last_name %>
   </p>
   <p class="profile_data">
-    email: <%= @logged_in_as.email %>
+    Email: <%= @logged_in_as.email %>
   </p>
+  <p class="profile_data">
+    Age: <%= @logged_in_as.age %>
+  </p>
+  <p class="profile_data">
+    Gender: <%= @logged_in_as.gender %>
+  </p>
+  <p class="profile_data">
+    Bio: <%= @logged_in_as.bio %>
+  </p>
+  <a id="edit_button" class="nav_button" href="/users/profile/edit/<%=@logged_in_as.slug%>">Edit</a>
 </div>
