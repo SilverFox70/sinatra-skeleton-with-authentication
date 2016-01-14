@@ -34,11 +34,6 @@
   padding: 0px;
 }
 
-#rest_form input{
-  margin: 5px;
-  padding: 0px;
-}
-
 input[type=submit]{
   width: 90px;
   margin: 5px;

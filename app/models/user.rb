@@ -10,6 +10,13 @@ class User < ActiveRecord::Base
   validates :password_hash, {presence: true} #add confirmation: true
   #validates :pwd_confirmation, presence: true
 
+  # Note about :role field
+  # Normally role will be saved as 0 as general users do
+  # not have access to modifying this value via the sign-up
+  # form.  Implement your own codes as necessary.  In this
+  # site a role value of 1 is considered an admin
+  before_save :check_role
+
   def password
     @password ||= BCrypt::Password.new(password_hash)
   end
@@ -30,6 +37,12 @@ class User < ActiveRecord::Base
 
   def is_admin?
     return self.role == 1
+  end
+
+  private
+
+  def check_role
+    self.role = 0 if self.role == nil
   end
 
 end

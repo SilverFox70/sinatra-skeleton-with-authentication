@@ -3,7 +3,10 @@
   <h1>Sinatra Skeleton with Login</h1>
   <p>Use this framework to build your app.</p>
   <% if session[:user_id] %>
-    <h2>Welcome <%= @user.email %>!</h2>
+    <h2>Welcome <%= @user.first_name %> <%= @user.last_name %>!</h2>
+    <% if @user.is_admin? %>
+      <p>You are logged in as an administrator.</p>
+    <% end %>
     <a id="logout_button" class="nav_button" href="/logout">Logout</a>
     <a id="add_button" class="nav_button" href="/restaurants/new">Add something</a>
   <% else %>
