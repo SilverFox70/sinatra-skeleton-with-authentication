@@ -1,4 +1,5 @@
 
+
 <div class="container">
   <h1>Sinatra Skeleton with Login</h1>
   <p>Use this framework to build your app.</p>
@@ -6,9 +7,11 @@
     <h2>Welcome <%= @user.first_name %> <%= @user.last_name %>!</h2>
     <% if @user.is_admin? %>
       <p>You are logged in as an administrator.</p>
+      <a id="admin_button" class="nav_button" href="/admin">Admin</a>
     <% end %>
     <a id="logout_button" class="nav_button" href="/logout">Logout</a>
-    <a id="add_button" class="nav_button" href="/restaurants/new">Add something</a>
+    <a id="add_button" class="nav_button" href="/restaurants/new">Add</a>
+    <a id="profile_button" class="nav_button" href="/users/profile/<%=@user.slug%>">Profile</a>
   <% else %>
     <a id="reg_button" class="nav_button" href="/register">Register</a>
     <a id="login_button" class="nav_button" href="/login">Login</a>

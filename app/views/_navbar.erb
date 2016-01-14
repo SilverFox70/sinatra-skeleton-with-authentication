@@ -1,0 +1,23 @@
+<% if session[:user_id] %>
+  <% @user.is_admin? ? admin = true : admin = false %>
+  <% logged_in = true %>
+<% else %>
+  <% logged_in = false %>
+<% end %>
+
+
+<nav class="nav_bar">
+  <ul>
+    <% if logged_in %>
+      <li><a id="logout_button" class="nav_button" href="/logout">Logout</a></li>
+      <li><a id="add_button" class="nav_button" href="/">Add</a></li>
+      <li><a id="profile_button" class="nav_button" href="/users/profile/<%=@user.slug%>">Profile</a></li>
+      <% if admin %>
+      <li><a id="admin_button" class="nav_button" href="/admin">Admin</a></li>
+      <% end %>
+    <% else %>
+      <li><a id="reg_button" class="nav_button" href="/register">Register</a></li>
+      <li><a id="login_button" class="nav_button" href="/login">Login</a></li>
+    <% end %>
+  </ul>
+</nav>

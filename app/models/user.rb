@@ -1,6 +1,9 @@
 require 'bcrypt'
+require 'securerandom'
+
 class User < ActiveRecord::Base
 
+  validates :slug, uniqueness: true
   validates :email, {presence: true,
                      uniqueness: true,
                      format:
@@ -15,6 +18,7 @@ class User < ActiveRecord::Base
   # not have access to modifying this value via the sign-up
   # form.  Implement your own codes as necessary.  In this
   # site a role value of 1 is considered an admin
+  before_create :create_slug
   before_save :check_role
 
   def password
@@ -43,6 +47,10 @@ class User < ActiveRecord::Base
 
   def check_role
     self.role = 0 if self.role == nil
+  end
+
+  def create_slug
+    self.slug = SecureRandom.hex(6)
   end
 
 end

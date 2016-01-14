@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Admin Page</h1>
+</div>
+
+  <% @all_users.each do |user| %>
+    <div class="container">
+      <p class="profile_data">
+        Name: <%= user.first_name %> <%= user.last_name %>
+      </p>
+      <p class="profile_data">
+        Email: <%= user.email %>
+      </p>
+      <p class="profile_data">
+        Age: <%= user.age %>
+      </p>
+      <p class="profile_data">
+        Gender: <%= user.gender %>
+      </p>
+      <p class="profile_data">
+        Bio: <%= user.bio %>
+      </p>
+    </div>
+  <% end %>
