@@ -14,7 +14,7 @@ post '/users/new' do
                    password: params[:password_plaintext])
   #@user.password = params[:password_plaintext]
   if @user.save
-    session[:user_id] = @user.id
+    session[:user_id] = @user.slug
     redirect '/'
   else
     @errors = @user.errors.full_messages
