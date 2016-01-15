@@ -9,7 +9,7 @@ end
 
 # Route the user to the homepage on successful login,
 # otherwise return them to the login page
-post '/sessions/new' do
+post '/sessions' do
   @user = User.find_by_email(params[:email])
   if @user && @user.authenticate(params[:email], params[:password_plaintext])
     session[:user_id] = @user.slug
@@ -21,4 +21,11 @@ post '/sessions/new' do
   end
 end
 
+get '/logout' do
+  session.delete(:user_id)
+  redirect '/'
+end
 
+post '/login' do
+  erb :welcome
+end

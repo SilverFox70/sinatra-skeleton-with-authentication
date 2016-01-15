@@ -7,7 +7,7 @@ get '/users/new' do
   end
 end
 
-post '/users/new' do
+post '/users' do
   @user = User.new(first_name: params[:first_name],
                    last_name: params[:last_name],
                    email:  params[:email],
@@ -22,7 +22,7 @@ post '/users/new' do
   end
 end
 
-get '/users/profile/update/:user_id' do
+put '/users/profile/:user_id' do
   this_profile = User.find_by(slug: params[:user_id] )
   id = this_profile.id
   this_profile =
@@ -36,7 +36,7 @@ get '/users/profile/update/:user_id' do
 end
 
 
-get '/users/profile/edit/:user_id' do
+get '/users/profile/:user_id/edit' do
   # if current_user is the same as the person who navigated
   # here, present them with a form to edit their profile
   # otherwise tell them they are not authorized to edit

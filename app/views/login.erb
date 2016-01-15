@@ -11,7 +11,7 @@
   <% end %>
 
   <!-- Show the login form   -->
-  <form id="login_form" method="POST" action="/sessions/new">
+  <form id="login_form" method="POST" action="/sessions">
     <fieldset>
       <legend>Login</legend>
       Email: <input type="text" id="email" name="email" value="<%= @user.try(:email) %>" placeholder="Your email..."><br/>
