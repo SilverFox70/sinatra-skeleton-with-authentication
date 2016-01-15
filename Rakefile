@@ -112,6 +112,11 @@ namespace :db do
     require APP_ROOT.join('db', 'seeds.rb')
   end
 
+  desc "Drop, recreate, migrate, and seed database"
+  task :reset do
+    system 'rake db:drop && rake db:create && rake db:migrate && rake db:seed'
+  end
+
   desc "rollback your migration--use STEPS=number to step back multiple times"
   task :rollback do
     steps = (ENV['STEPS'] || 1).to_i
