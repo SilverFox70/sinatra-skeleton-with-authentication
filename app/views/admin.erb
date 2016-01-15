@@ -3,7 +3,7 @@
 </div>
 
   <% @all_users.each do |user| %>
-    <div class="container">
+    <div class="user_container" id="<%=user.id%>">
       <p class="profile_data">
         Name: <%= user.first_name %> <%= user.last_name %>
       </p>

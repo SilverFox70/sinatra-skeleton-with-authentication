@@ -8,8 +8,13 @@ get '/admin'  do
   end
 end
 
-get '/admin/profile/delete/:user_id' do
+delete '/admin/profile/delete/:user_id' do
   this_profile = User.find_by(slug: params[:user_id])
-  this_profile.destroy
-  redirect '/admin'
+  @id = this_profile.id
+  #this_profile.destroy
+  if request.xhr?
+    {id: @id}.to_json
+  else
+    redirect '/admin'
+  end
 end
