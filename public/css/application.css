@@ -1,6 +1,6 @@
 .top_container {
   width: 100%;
-  height: 100px;
+  height: 125px;
   color: white;
   background-color: black;
 }
@@ -17,7 +17,7 @@
 }
 
 .title_block {
-  width: 70%;
+  width:60%;
   float: left;
 }
 
@@ -33,7 +33,12 @@
   width: 600px;
   padding: 5px 20px 20px 20px;
   border: 1px dotted gray;
-};
+}
+
+.edit_profile {
+  margin: 20px auto;
+  width: 600px;
+}
 
 .nav_bar {
   float: right;

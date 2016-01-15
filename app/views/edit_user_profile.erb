@@ -2,8 +2,10 @@
   <form class="profile_form" method="PUT" action="/users/profile/update/<%= @logged_in_as.slug %>">
     <fieldset>
       <legend>Edit Profile</legend>
+        First name:
         <input id="first_name" type="text" name="first_name" value="<%= @logged_in_as.try(:first_name) %>" placeholder="First Name">
         <br/>
+        Last name:
         <input id="last_name" type="text" name="last_name" value="<%= @logged_in_as.try(:last_name) %>" placeholder="Last Name">
         <br/>
         <input id="email" type="text" name="email" value="<%= @logged_in_as.try(:email) %>" placeholder="email">
