@@ -9,7 +9,7 @@ get '/admin'  do
   end
 end
 
-delete '/admin/profile/delete/:user_id' do
+delete '/profiles/:user_id' do
   this_profile = User.find_by(slug: params[:user_id])
   @id = this_profile.id
   this_profile.destroy

@@ -1,5 +1,6 @@
 <div class="edit_profile">
-  <form class="profile_form" method="PUT" action="/users/profile/update/<%= @logged_in_as.slug %>">
+  <form class="profile_form" method="POST" action="/users/profile/<%= @logged_in_as.slug %>">
+    <input type="hidden" name="_method" value="put">
     <fieldset>
       <legend>Edit Profile</legend>
         First name:
