@@ -11,6 +11,7 @@ This is my version of a sinatra skeleton with user authentication and registrati
 
 * Change the routing when a user successfully logs in or provide a partial to let the user know that authentication succeeded.
 
+* make the routes follow RESTful convention better
 
 
 
