@@ -1,6 +1,6 @@
 class Friend < ActiveRecord::Base
   # Remember to create a migration!
-  belongs_to :user
+  belongs_to :userbill
   before_save :create_rel_desc
 
   private

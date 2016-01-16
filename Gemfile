@@ -16,8 +16,10 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 gem 'pry'
 gem 'bcrypt'
+gem 'unirest', '~> 1.1', '>= 1.1.2'
 
 gem 'shotgun'
+gem 'byebug'
 
 group :test do
   gem 'faker'
