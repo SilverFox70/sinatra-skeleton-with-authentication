@@ -3,7 +3,6 @@ require 'securerandom'
 
 class User < ActiveRecord::Base
   has_many :friends
-  belongs_to :buddy, class_name: "Friend", foreign_key: :target_user_id
   validates :slug, uniqueness: true
   validates :email, {presence: true,
                      uniqueness: true,
@@ -21,6 +20,42 @@ class User < ActiveRecord::Base
   # site a role value of 1 is considered an admin
   before_create :create_slug
   before_save :check_role
+
+  def get_friend_records
+    user_friends = self.friends
+    friend_to_user = Friend.where(target_user_id: self.id)
+    all_friends = user_friends | friend_to_user
+  end
+
+  def connections
+    all_friends = get_friend_records
+    get_friends(all_friends)
+  end
+
+  def _2nd_connections
+    secondaries = []
+    contacts = self.get_friend_records
+    contacts.each do |contact|
+      if contact.user_id != self.id
+        friend_id = contact.user_id
+      else
+        friend_id = contact.target_user_id
+      end
+      connect_thru = User.find(friend_id)
+      secondaries << connect_thru.connections
+    end
+    # get_friends(secondaries)
+    secondaries
+  end
+
+  def get_friends(all_friends)
+    user_contacts = []
+    all_friends.each do |friend|
+      user_contacts << User.find(friend.user_id) if friend.user_id != self.id
+      user_contacts << User.find(friend.target_user_id) if friend.target_user_id != self.id
+    end
+    user_contacts
+  end
 
   def password
     @password ||= BCrypt::Password.new(password_hash)

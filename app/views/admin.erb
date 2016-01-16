@@ -20,5 +20,6 @@
         Bio: <%= user.bio %>
       </p>
       <a id="delete_button" class="nav_button" href="/profiles/<%=user.slug%>">Delete!</a>
+      <a id="qr_button" class="nav_button" href="/qr_code/<%=user.slug%>">Get QR Code</a>
     </div>
   <% end %>
